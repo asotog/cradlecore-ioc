@@ -1,0 +1,115 @@
+\hypertarget{class_xml_configuration_reader}{\section{Xml\-Configuration\-Reader Class Reference}
+\label{class_xml_configuration_reader}\index{Xml\-Configuration\-Reader@{Xml\-Configuration\-Reader}}
+}
+Inheritance diagram for Xml\-Configuration\-Reader\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_xml_configuration_reader}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_xml_configuration_reader_af44a931aab63dc6542b103bafe9d9c87}{\-\_\-\-\_\-construct} (\$configurations)
+\item 
+\hyperlink{class_xml_configuration_reader_a64571309bfb3238c65fd3c2898f92440}{read} ()
+\item 
+\hyperlink{class_xml_configuration_reader_ab10a1fa095c486bea43aadd057baaf78}{add\-Object} (\$object)
+\item 
+\hyperlink{class_xml_configuration_reader_af6fa42b05b84795a316a1ebf2a154d6d}{get\-Object\-From\-Container} (\$key)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_xml_configuration_reader}{Xml\-Configuration\-Reader} reads the xml file.
+
+\begin{DoxyAuthor}{Author}
+Alejandro Soto Gonzalez \href{mailto:asotog88@yahoo.es}{\tt asotog88@yahoo.\-es} 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_xml_configuration_reader_af44a931aab63dc6542b103bafe9d9c87}{\index{Xml\-Configuration\-Reader@{Xml\-Configuration\-Reader}!\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}}
+\index{\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}!XmlConfigurationReader@{Xml\-Configuration\-Reader}}
+\subsubsection[{\-\_\-\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-construct (
+\begin{DoxyParamCaption}
+\item[{}]{\$configurations}
+\end{DoxyParamCaption}
+)}}\label{class_xml_configuration_reader_af44a931aab63dc6542b103bafe9d9c87}
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+{\em string/array} & \$configurations Single configuration file location or multiple locations in an array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_xml_configuration_reader_ab10a1fa095c486bea43aadd057baaf78}{\index{Xml\-Configuration\-Reader@{Xml\-Configuration\-Reader}!add\-Object@{add\-Object}}
+\index{add\-Object@{add\-Object}!XmlConfigurationReader@{Xml\-Configuration\-Reader}}
+\subsubsection[{add\-Object}]{\setlength{\rightskip}{0pt plus 5cm}add\-Object (
+\begin{DoxyParamCaption}
+\item[{}]{\$object}
+\end{DoxyParamCaption}
+)}}\label{class_xml_configuration_reader_ab10a1fa095c486bea43aadd057baaf78}
+Start the proccess to add an object to the container
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$object} & Custom array where is defined an object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_reader}{Reader}.
+
+\hypertarget{class_xml_configuration_reader_af6fa42b05b84795a316a1ebf2a154d6d}{\index{Xml\-Configuration\-Reader@{Xml\-Configuration\-Reader}!get\-Object\-From\-Container@{get\-Object\-From\-Container}}
+\index{get\-Object\-From\-Container@{get\-Object\-From\-Container}!XmlConfigurationReader@{Xml\-Configuration\-Reader}}
+\subsubsection[{get\-Object\-From\-Container}]{\setlength{\rightskip}{0pt plus 5cm}get\-Object\-From\-Container (
+\begin{DoxyParamCaption}
+\item[{}]{\$key}
+\end{DoxyParamCaption}
+)}}\label{class_xml_configuration_reader_af6fa42b05b84795a316a1ebf2a154d6d}
+Start the proccess to retrieve an object from the container
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$key} & Id to retrieve the object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Object 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_reader}{Reader}.
+
+\hypertarget{class_xml_configuration_reader_a64571309bfb3238c65fd3c2898f92440}{\index{Xml\-Configuration\-Reader@{Xml\-Configuration\-Reader}!read@{read}}
+\index{read@{read}!XmlConfigurationReader@{Xml\-Configuration\-Reader}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}read (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_xml_configuration_reader_a64571309bfb3238c65fd3c2898f92440}
+Start reading xml definition file
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_reader}{Reader}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/ioc/readers/Xml\-Configuration\-Reader.\-php\end{DoxyCompactItemize}

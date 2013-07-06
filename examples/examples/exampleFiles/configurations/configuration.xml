@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects context-id="dev-objects" cradlecore-version="1.0" container-lifetime="0">
+	<!-- Object 1 -->
+	<object id="connection" class="../DBConnection">
+		<constructor-argument name="host">127.0.0.1</constructor-argument>
+		<constructor-argument name="user">root</constructor-argument>
+		<constructor-argument name="password">1234</constructor-argument>
+		<constructor-argument name="database">dbtest</constructor-argument>
+	</object>
+
+	<!-- Object 2 -->
+	<object id="personDAO" class="../PersonDao">
+		<property name="connectionDb" ref="connection" />
+		<property name="name">Somebody</property>
+	</object>
+
+	<!-- Object 3 -->
+	<!-- <object id="symphonyFinder" class="sfFinder" resource="symfony/util/sfFinder.class.php" 
+		pear="true"/> -->
+
+	<!-- Object 4 -->
+	<object id="itemDao" class="../ItemDao">
+		<constructor-argument name="connection">
+			<ref id="connection" />
+		</constructor-argument>
+	</object>
+	
+</objects>

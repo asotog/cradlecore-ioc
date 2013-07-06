@@ -1,0 +1,72 @@
+\hypertarget{class_dependency_sorter}{\section{Dependency\-Sorter Class Reference}
+\label{class_dependency_sorter}\index{Dependency\-Sorter@{Dependency\-Sorter}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_dependency_sorter_a095c5d389db211932136b53f25f39685}{\-\_\-\-\_\-construct} ()
+\item 
+\hyperlink{class_dependency_sorter_a710afbcc6873a95e7516ddff01716d04}{add\-To\-Temp\-Storage} (\$object\-Definition)
+\item 
+\hyperlink{class_dependency_sorter_ad6b4181e0ad487a7a71bcb8b98bc74ce}{retrieve\-Sorted\-Objects\-Definitions} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_dependency_sorter}{Dependency\-Sorter} orders all the objects definitions according to its dependencies requirements for example to avoid put in sorted order the objects defined in the configuration.\-xml this class builds a graph in an array depending on the dependencies level of the xml definitions.
+
+\begin{DoxyAuthor}{Author}
+Alejandro Soto Gonzalez \href{mailto:asotog88@yahoo.es}{\tt asotog88@yahoo.\-es} 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_dependency_sorter_a095c5d389db211932136b53f25f39685}{\index{Dependency\-Sorter@{Dependency\-Sorter}!\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}}
+\index{\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}!DependencySorter@{Dependency\-Sorter}}
+\subsubsection[{\-\_\-\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_dependency_sorter_a095c5d389db211932136b53f25f39685}
+Constructor
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_dependency_sorter_a710afbcc6873a95e7516ddff01716d04}{\index{Dependency\-Sorter@{Dependency\-Sorter}!add\-To\-Temp\-Storage@{add\-To\-Temp\-Storage}}
+\index{add\-To\-Temp\-Storage@{add\-To\-Temp\-Storage}!DependencySorter@{Dependency\-Sorter}}
+\subsubsection[{add\-To\-Temp\-Storage}]{\setlength{\rightskip}{0pt plus 5cm}add\-To\-Temp\-Storage (
+\begin{DoxyParamCaption}
+\item[{}]{\$object\-Definition}
+\end{DoxyParamCaption}
+)}}\label{class_dependency_sorter_a710afbcc6873a95e7516ddff01716d04}
+Adds an object definition to the sorter temp storage
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$object} & Custom array where is defined an object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_dependency_sorter_ad6b4181e0ad487a7a71bcb8b98bc74ce}{\index{Dependency\-Sorter@{Dependency\-Sorter}!retrieve\-Sorted\-Objects\-Definitions@{retrieve\-Sorted\-Objects\-Definitions}}
+\index{retrieve\-Sorted\-Objects\-Definitions@{retrieve\-Sorted\-Objects\-Definitions}!DependencySorter@{Dependency\-Sorter}}
+\subsubsection[{retrieve\-Sorted\-Objects\-Definitions}]{\setlength{\rightskip}{0pt plus 5cm}retrieve\-Sorted\-Objects\-Definitions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_dependency_sorter_ad6b4181e0ad487a7a71bcb8b98bc74ce}
+Retrieves the sorted objects definition
+
+\begin{DoxyReturn}{Returns}
+array An array with all the objects definitions sorted by dependencies order 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/ioc/readers/Dependency\-Sorter.\-php\end{DoxyCompactItemize}

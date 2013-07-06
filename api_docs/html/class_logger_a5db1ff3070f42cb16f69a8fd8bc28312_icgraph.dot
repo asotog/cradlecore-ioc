@@ -1,0 +1,27 @@
+digraph "debug"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="debug",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ContainerCache\\getObject\lFromContainerCache",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_container_cache.html#a7a9112e3be938ede001b443f227de2e4"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Container\\getObject",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_container.html#ad0340981c56db5aaddfc2c70a9927fd1"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="XmlContext\\getObject",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_xml_context.html#a09620fce23d46253525756869a03d51f"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Factory\\addObjectToContainer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_factory.html#a6987b05993ea9cf488ff8224f08f7cc8"];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="ArrayConfigurationReader\l\\addObject",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_array_configuration_reader.html#ab10a1fa095c486bea43aadd057baaf78"];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="ArrayConfigurationReader\\read",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_array_configuration_reader.html#a64571309bfb3238c65fd3c2898f92440"];
+  Node5 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="XmlConfigurationReader\l\\addObject",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_xml_configuration_reader.html#ab10a1fa095c486bea43aadd057baaf78"];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Factory\\isContainerCached",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_factory.html#aaefbaf9f91b8697ec84bea5a581d0e0e"];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="XmlConfigurationReader\l\\__construct",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_xml_configuration_reader.html#af44a931aab63dc6542b103bafe9d9c87"];
+  Node1 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="XmlObjectTag\\addProperty",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_xml_object_tag.html#a519fc78825c329771f82978b4b20678b"];
+}

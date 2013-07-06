@@ -1,0 +1,94 @@
+\hypertarget{class_xml_context}{\section{Xml\-Context Class Reference}
+\label{class_xml_context}\index{Xml\-Context@{Xml\-Context}}
+}
+Inheritance diagram for Xml\-Context\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_xml_context}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_xml_context_a746a3a5a5dd069a48c1845f1399858f9}{\-\_\-\-\_\-construct} (\$configuration, \$debug=false)
+\item 
+\hyperlink{class_xml_context_a91098fa7d1917ce4833f284bbef12627}{initialize} ()
+\item 
+\hyperlink{class_xml_context_a09620fce23d46253525756869a03d51f}{get\-Object} (\$key)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_xml_context}{Xml\-Context} used to instance the container from the application.
+
+\begin{DoxyAuthor}{Author}
+Alejandro Soto Gonzalez \href{mailto:asotog88@yahoo.es}{\tt asotog88@yahoo.\-es} 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_xml_context_a746a3a5a5dd069a48c1845f1399858f9}{\index{Xml\-Context@{Xml\-Context}!\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}}
+\index{\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}!XmlContext@{Xml\-Context}}
+\subsubsection[{\-\_\-\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-construct (
+\begin{DoxyParamCaption}
+\item[{}]{\$configuration, }
+\item[{}]{\$debug = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{class_xml_context_a746a3a5a5dd069a48c1845f1399858f9}
+Constructor
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$configuration} & Absolute xml configuration file location. \\
+\hline
+boolean & {\em \$debug} & Optional, default value is false, generates a log file relative to configuration file location. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_xml_context_a09620fce23d46253525756869a03d51f}{\index{Xml\-Context@{Xml\-Context}!get\-Object@{get\-Object}}
+\index{get\-Object@{get\-Object}!XmlContext@{Xml\-Context}}
+\subsubsection[{get\-Object}]{\setlength{\rightskip}{0pt plus 5cm}get\-Object (
+\begin{DoxyParamCaption}
+\item[{}]{\$key}
+\end{DoxyParamCaption}
+)}}\label{class_xml_context_a09620fce23d46253525756869a03d51f}
+Obtains the instanced object
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$key} & Id to retrieve the object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Object 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_context}{Context}.
+
+\hypertarget{class_xml_context_a91098fa7d1917ce4833f284bbef12627}{\index{Xml\-Context@{Xml\-Context}!initialize@{initialize}}
+\index{initialize@{initialize}!XmlContext@{Xml\-Context}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_xml_context_a91098fa7d1917ce4833f284bbef12627}
+Initialize the xml reader object and starts to iterate over the file(s)
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_context}{Context}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/ioc/context/Xml\-Context.\-php\end{DoxyCompactItemize}

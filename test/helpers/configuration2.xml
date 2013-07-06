@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects cradlecore-version="1.0-prealpha">	
+	<!-- Object 1 -->
+	<object id="connection" class="DBConnection">
+		<constructor-argument name="host">127.0.0.1</constructor-argument>
+		<constructor-argument name="user">root</constructor-argument>
+		<constructor-argument name="password">1234</constructor-argument>
+		<constructor-argument name="database">dbtest</constructor-argument>
+	</object>
+</objects>

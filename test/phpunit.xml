@@ -1,0 +1,13 @@
+<!-- documented here: http://www.phpunit.de/manual/3.3/en/appendixes.configuration.html -->
+<phpunit verbose="false">
+    <testsuite name="All Tests">
+        <!-- all *Test.php files here and sub-directories -->
+        <directory>./</directory>
+    </testsuite>
+    <!-- <filter>
+        <blacklist>
+            <directory suffix=".php">/home/y/share/pear/Yahoo/</directory>
+            <directory suffix=".inc">/home/y/share/pear/Yahoo/</directory>
+        </blacklist>
+    </filter> -->
+</phpunit>

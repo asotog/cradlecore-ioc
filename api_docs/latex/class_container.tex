@@ -1,0 +1,100 @@
+\hypertarget{class_container}{\section{Container Class Reference}
+\label{class_container}\index{Container@{Container}}
+}
+Inheritance diagram for Container\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_container}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_container_a095c5d389db211932136b53f25f39685}{\-\_\-\-\_\-construct} ()
+\item 
+\hyperlink{class_container_ac16a9d692ebba1b325b9991b26916a18}{add\-Object} (\$key, \$value)
+\item 
+\& \hyperlink{class_container_ad0340981c56db5aaddfc2c70a9927fd1}{get\-Object} (\$key)
+\item 
+\hyperlink{class_container_a039004a4b26016152db14bebcef6d4d6}{cache\-Container} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_container}{Container} manage the instanced and configured objects and add them to an array list.
+
+\begin{DoxyAuthor}{Author}
+Alejandro Soto Gonzalez \href{mailto:asotog88@yahoo.es}{\tt asotog88@yahoo.\-es} 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_container_a095c5d389db211932136b53f25f39685}{\index{Container@{Container}!\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}}
+\index{\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}!Container@{Container}}
+\subsubsection[{\-\_\-\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_container_a095c5d389db211932136b53f25f39685}
+Constructor
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_container_ac16a9d692ebba1b325b9991b26916a18}{\index{Container@{Container}!add\-Object@{add\-Object}}
+\index{add\-Object@{add\-Object}!Container@{Container}}
+\subsubsection[{add\-Object}]{\setlength{\rightskip}{0pt plus 5cm}add\-Object (
+\begin{DoxyParamCaption}
+\item[{}]{\$key, }
+\item[{}]{\$value}
+\end{DoxyParamCaption}
+)}}\label{class_container_ac16a9d692ebba1b325b9991b26916a18}
+Add object to array list
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$key} & Unique id that indentifies a defined object \\
+\hline
+object & {\em \$value} & Instantiated object value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_container_a039004a4b26016152db14bebcef6d4d6}{\index{Container@{Container}!cache\-Container@{cache\-Container}}
+\index{cache\-Container@{cache\-Container}!Container@{Container}}
+\subsubsection[{cache\-Container}]{\setlength{\rightskip}{0pt plus 5cm}cache\-Container (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_container_a039004a4b26016152db14bebcef6d4d6}
+Cache container objects
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_container_ad0340981c56db5aaddfc2c70a9927fd1}{\index{Container@{Container}!get\-Object@{get\-Object}}
+\index{get\-Object@{get\-Object}!Container@{Container}}
+\subsubsection[{get\-Object}]{\setlength{\rightskip}{0pt plus 5cm}\& get\-Object (
+\begin{DoxyParamCaption}
+\item[{}]{\$key}
+\end{DoxyParamCaption}
+)}}\label{class_container_ad0340981c56db5aaddfc2c70a9927fd1}
+Retrieve a configured object directly from the container
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$key} & Unique id that indentifies a defined object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/ioc/container/Container.\-php\end{DoxyCompactItemize}

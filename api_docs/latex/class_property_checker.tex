@@ -1,0 +1,89 @@
+\hypertarget{class_property_checker}{\section{Property\-Checker Class Reference}
+\label{class_property_checker}\index{Property\-Checker@{Property\-Checker}}
+}
+Inheritance diagram for Property\-Checker\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_property_checker}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_property_checker_a095c5d389db211932136b53f25f39685}{\-\_\-\-\_\-construct} ()
+\item 
+\hyperlink{class_property_checker_a1754a2a0e4b1aa7bc619f8caabd3d03f}{property\-Check} (\$object, \$property\-Name)
+\item 
+\hyperlink{class_property_checker_a1677a0a1db26a8ca36feb5c6de858d0e}{property\-Format} (\$property\-Name, \&\$is\-Reference=null)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_property_checker}{Property\-Checker} validate if the property is valid and if it has the proper getter and setter respective method.
+
+\begin{DoxyAuthor}{Author}
+Alejandro Soto Gonzalez \href{mailto:asotog88@yahoo.es}{\tt asotog88@yahoo.\-es} 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_property_checker_a095c5d389db211932136b53f25f39685}{\index{Property\-Checker@{Property\-Checker}!\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}}
+\index{\-\_\-\-\_\-construct@{\-\_\-\-\_\-construct}!PropertyChecker@{Property\-Checker}}
+\subsubsection[{\-\_\-\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_property_checker_a095c5d389db211932136b53f25f39685}
+Constructor
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_property_checker_a1754a2a0e4b1aa7bc619f8caabd3d03f}{\index{Property\-Checker@{Property\-Checker}!property\-Check@{property\-Check}}
+\index{property\-Check@{property\-Check}!PropertyChecker@{Property\-Checker}}
+\subsubsection[{property\-Check}]{\setlength{\rightskip}{0pt plus 5cm}property\-Check (
+\begin{DoxyParamCaption}
+\item[{}]{\$object, }
+\item[{}]{\$property\-Name}
+\end{DoxyParamCaption}
+)}}\label{class_property_checker_a1754a2a0e4b1aa7bc619f8caabd3d03f}
+Checks if it is a valid property and if it exists
+
+
+\begin{DoxyParams}[1]{Parameters}
+Simple\-X\-M\-L\-Element & {\em \$object} & Xml object \\
+\hline
+string & {\em \$property\-Name} & Name of the object property \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+\hypertarget{class_property_checker_a1677a0a1db26a8ca36feb5c6de858d0e}{\index{Property\-Checker@{Property\-Checker}!property\-Format@{property\-Format}}
+\index{property\-Format@{property\-Format}!PropertyChecker@{Property\-Checker}}
+\subsubsection[{property\-Format}]{\setlength{\rightskip}{0pt plus 5cm}property\-Format (
+\begin{DoxyParamCaption}
+\item[{}]{\$property\-Name, }
+\item[{\&}]{\$is\-Reference = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}\label{class_property_checker_a1677a0a1db26a8ca36feb5c6de858d0e}
+Search for a referenced property string pattern
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$property\-Name} & Name of the object property \\
+\hline
+ & {\em boolean/null} & \$is\-Reference Flag to be set to define when is a property referenced value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/ioc/checkers/Property\-Checker.\-php\end{DoxyCompactItemize}

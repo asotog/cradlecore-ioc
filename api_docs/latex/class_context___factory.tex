@@ -1,0 +1,56 @@
+\hypertarget{class_context___factory}{\section{Context\-\_\-\-Factory Class Reference}
+\label{class_context___factory}\index{Context\-\_\-\-Factory@{Context\-\_\-\-Factory}}
+}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_context___factory_aee25c6c53426d9ad413a8edf259cc6ac}{get\-Xml\-Context} (\$configuration, \$debug=false)
+\item 
+static \hyperlink{class_context___factory_a030441b6c63a71760ca7fb671dfa7289}{get\-Array\-Context} (\$id, \$configuration, \$basedir, \$debug=false)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_factory}{Factory} class to instantiate all context types, is more like an utility class 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_context___factory_a030441b6c63a71760ca7fb671dfa7289}{\index{Context\-\_\-\-Factory@{Context\-\_\-\-Factory}!get\-Array\-Context@{get\-Array\-Context}}
+\index{get\-Array\-Context@{get\-Array\-Context}!Context_Factory@{Context\-\_\-\-Factory}}
+\subsubsection[{get\-Array\-Context}]{\setlength{\rightskip}{0pt plus 5cm}static get\-Array\-Context (
+\begin{DoxyParamCaption}
+\item[{}]{\$id, }
+\item[{}]{\$configuration, }
+\item[{}]{\$basedir, }
+\item[{}]{\$debug = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_context___factory_a030441b6c63a71760ca7fb671dfa7289}
+Instantiates a new \hyperlink{class_array_context}{Array\-Context}.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_array_context}{Array\-Context} 
+\end{DoxyReturn}
+\hypertarget{class_context___factory_aee25c6c53426d9ad413a8edf259cc6ac}{\index{Context\-\_\-\-Factory@{Context\-\_\-\-Factory}!get\-Xml\-Context@{get\-Xml\-Context}}
+\index{get\-Xml\-Context@{get\-Xml\-Context}!Context_Factory@{Context\-\_\-\-Factory}}
+\subsubsection[{get\-Xml\-Context}]{\setlength{\rightskip}{0pt plus 5cm}static get\-Xml\-Context (
+\begin{DoxyParamCaption}
+\item[{}]{\$configuration, }
+\item[{}]{\$debug = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_context___factory_aee25c6c53426d9ad413a8edf259cc6ac}
+Instantiates a new \hyperlink{class_xml_context}{Xml\-Context}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$configuration} & Absolute xml configuration file location. \\
+\hline
+boolean & {\em \$debug} & Optional, default value is false, generates a log file relative to configuration file location. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_xml_context}{Xml\-Context} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/ioc/context/Context\-\_\-\-Factory.\-php\end{DoxyCompactItemize}
