@@ -7,4 +7,5 @@
 		<constructor-argument name="password">1234</constructor-argument>
 		<constructor-argument name="database">dbtest</constructor-argument>
 	</object>
+	<object id="validator" class="Validator" resource="/Validator.php"/>
 </objects>
