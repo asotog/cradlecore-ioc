@@ -2,10 +2,10 @@
     <div class="pure-menu pure-menu-open pure-menu-horizontal">
         <ul>
             <li class="{% if page.overview %}pure-menu-selected{% endif %}">
-                <a href="/">Overview</a>
+                <a href="{{ site.baseurl }}/">Overview</a>
             </li>
             <li class="{% if page.url contains '/docs/' %}pure-menu-selected{% endif %}">
-                <a href="/docs/home">Documentation</a>
+                <a href="{{ site.baseurl }}/docs/home">Documentation</a>
             </li>
             <li>
                 <a href="https://github.com/asotog88/cradlecore-ioc">View On Github</a>
