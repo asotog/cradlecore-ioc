@@ -1,0 +1,45 @@
+.dyna-menu-widget .menu-link {
+    display: block;
+    top: 0;
+    left: 0;
+    position:fixed;
+    background: #000;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 0.75em 1em;
+    z-index: 3;
+}
+.dyna-menu-widget .menu-link.pressed {
+    box-shadow: inset 0 0 10px #FFFFFF;
+    ;
+}
+.dyna-menu-widget .menu {
+    position: absolute;
+    display: none;
+    top:0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    width:70%;
+    z-index:3;
+    padding: 1em;
+    box-shadow:-10px 10px 20px #888889;
+}
+.dyna-menu-widget .menu h4 {
+    color: #FFF;
+}
+.dyna-menu-widget .menu li {
+    padding: 1em 0 1em 0;
+    list-style: none;
+    border-top: 1px dotted #FFF;
+}
+.dyna-menu-widget .menu a {
+    color: #CCC;
+}
+.dyna-menu-widget .menu.visible {
+    display: block;
+}
+.legal .git .git-icon {
+    width: 10%;
+}
+section.docs {
+    width: 100%;
+}

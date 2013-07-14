@@ -1,0 +1,95 @@
+body {
+    color: #777
+}
+body, h2, h3 {
+    font-family:"Montserrat", sans-serif
+}
+a {
+    color: #62A77D;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration:underline;
+}
+.left {
+    float: left;
+}
+.right {
+    float:right;
+}
+.header {
+    text-align:center;
+}
+.header h1 {
+    margin: 0.5em 0;
+    font-size: 3em;
+    font-weight: 300;
+}
+.header h2 {
+    font-weight: 300;
+    margin: 0;
+    color: #ccc;
+}
+.header h1, .hero h1, .hero h2, .tk-omnes-pro {
+    font-family:"Maven Pro", sans-serif
+}
+.l-box {
+    padding: 1.3em;
+}
+.summary {
+    color:#000000;
+}
+.splash-text {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 40px;
+}
+.splash .splash-subhead {
+    color: #999;
+    font-weight: 300;
+    line-height: 1.4em;
+    font-size:1.1em
+}
+.primary-button {
+    background: #74C494;
+    color: #fff;
+    font-size: 150%;
+    text-decoration:none;
+}
+.primary-button.disabled {
+    background:#DDDDDD;
+}
+article {
+    padding: 0 2em;
+}
+section.docs {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0 0 2em 0;
+}
+.legal {
+    background: #DDDDDD;
+    font-size: 80%;
+}
+.legal .git {
+    text-align:right;
+    padding: 1em 0 0 0;
+}
+.footer {
+    background: #111;
+    color: #666;
+    text-align: center;
+    padding: 1em;
+    font-size: 80%;
+}
+.highlight {
+    background: #333;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 10px rgba(0, 0, 0, .3), 0 1px 0 rgba(255, 255, 255, .1), 0 -1px 0 rgba(0, 0, 0, .5);
+    padding: 0.5em;
+}
+.dyna-menu-widget .menu-link {
+    display:none;
+}
