@@ -1,6 +1,6 @@
 <?php
 include_once(dirname(__FILE__)  . '/../checkers/ClassChecker.php');
-
+include_once(dirname(__FILE__)  . '/../../utils/Constants.php');
 /*
  * This file is part of the cradlecore For PHP package.
  * (c) Alejandro Soto Gonzalez. <asotog88@yahoo.es>
@@ -30,10 +30,12 @@ class IncludeManager {
      * Include source files when the container is cached
      *
      * @param array $objectsArray XmlObjectTag array
+     * @param array $globalConfiguration Globalconfiguration for the container
      * @return void
      */
-    public static function includeFiles($objectsArray = array()){
+    public static function includeFiles($objectsArray = array(), $globalConfiguration){
         $classChecker = new ClassChecker();
+        $classChecker->setClassPathList($globalConfiguration[Constants::$CLASSPATH_LIST]);
         for($i = 0; $i < count($objectsArray); $i++){
             $result = $classChecker->isCorrectClass($objectsArray[$i]->getObjectConfiguration());
         }

@@ -1,5 +1,6 @@
 <?php
 include_once(dirname(__FILE__)  . '/../checkers/ClassChecker.php');
+include_once(dirname(__FILE__)  . '/../../utils/Constants.php');
 
 /*
  * This file is part of the cradlecore For PHP package.
@@ -49,8 +50,8 @@ class Factory extends ClassChecker  {
             $this->createObjectInstance($object);
             $this->addPropertyToObjectInstance($object);
         } else if ($correctClass == false) {
-            new CradleCoreException($object['class'] . ' is not a valid class');
-            Logger::debug($object['class'] . ' is not a valid [CLASS] [ERROR]');
+            new CradleCoreException($object[Constants::$CLASS] . ' is not a valid class');
+            Logger::debug($object[Constants::$CLASS] . ' is not a valid [CLASS] [ERROR]');
         }
     }
 
@@ -116,7 +117,7 @@ class Factory extends ClassChecker  {
      * @return void
      */
     private function createObjectInstance($object){
-        if(count($object['constructor-arguments']) > 0){
+        if(count($object[Constants::$ARGUMENTS]) > 0){
             $this->instanceObjectWithArguments($object);
         } else {
             $this->instanceSingleObject($object);
@@ -132,8 +133,8 @@ class Factory extends ClassChecker  {
     private function instanceSingleObject($object){
         $reflectionClass = new ReflectionClass($this->getClassName($object));
         $objectInstanced = $reflectionClass->newInstance();
-        Logger::debug(' Object [' . $object['id'] . '] type [' . $object['class'] .  '] instanced');
-        $this->container->addObject($object['id'],$objectInstanced);
+        Logger::debug(' Object [' . $object[Constants::$ID] . '] type [' . $object[Constants::$CLASS] .  '] instanced');
+        $this->container->addObject($object[Constants::$ID],$objectInstanced);
     }
 
     /**
@@ -144,9 +145,9 @@ class Factory extends ClassChecker  {
      */
     private function instanceObjectWithArguments($object){
         $reflectionClass = new ReflectionClass($this->getClassName($object));
-        $objectInstanced = $reflectionClass->newInstanceArgs($this->proccessArguments($object['constructor-arguments']));
-        Logger::debug(' Object [' . $object['id'] . '] type [' . $object['class'] .  '] instanced');
-        $this->container->addObject($object['id'],$objectInstanced);
+        $objectInstanced = $reflectionClass->newInstanceArgs($this->proccessArguments($object[Constants::$ARGUMENTS]));
+        Logger::debug(' Object [' . $object[Constants::$ID] . '] type [' . $object[Constants::$CLASS] .  '] instanced');
+        $this->container->addObject($object[Constants::$ID],$objectInstanced);
     }
 
     /**

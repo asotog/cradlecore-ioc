@@ -17,7 +17,15 @@ include_once(dirname(__FILE__)  . '/../checkers/PropertyChecker.php');
 
 class ClassChecker extends PropertyChecker {
     private $pearPath;
-
+    
+    /**
+     * Class path list, list of location/paths where the classes are stored and where are going to be taken tp include the php files 
+     * and to load the container object
+     * 
+     * @var array<String>
+     */
+    private $classPathList= array();
+    
     /**
      * Constructor
      *
@@ -25,6 +33,15 @@ class ClassChecker extends PropertyChecker {
      */
     public function __construct(){  }
 
+    /**
+     * Sets the class path list
+     * 
+     * @param array $classPathList
+     */
+    public function setClassPathList($classPathList) {
+        $this->classPathList = $classPathList;
+    }
+    
     /**
      * Checks if the class can be included or is a valid class
      *
@@ -46,8 +63,9 @@ class ClassChecker extends PropertyChecker {
      * @return boolean
      */
     private function validClass($object){
-        if(file_exists(getenv('CALLERDIR') . $this->getClassFile($object))){
-            include_once(getenv('CALLERDIR') . '/' . $this->getClassFile($object));
+        $file = $this->fileExists($object);
+        if ($file !== false){
+            include_once($file);
             $this->getClassName($object);
             return class_exists($this->getClassName($object));
         } else {
@@ -57,6 +75,26 @@ class ClassChecker extends PropertyChecker {
 
     }
 
+    /**
+     * Class file exists validator
+     * 
+     * @param array $object Array with the object properties and defined values
+     * @return boolean
+     */
+    private function fileExists($object){
+        $file = getenv('CALLERDIR') . $this->getClassFile($object);
+        if (!file_exists($file)) {
+            for ($i = 0; $i < count($this->classPathList); $i++) {
+                $file = getenv('CALLERDIR') . $this->classPathList[$i] . $this->getClassFile($object);
+                if (file_exists($file)) {
+                    return $file;
+                }
+            }
+            return false;
+        }
+        return $file;
+    }
+    
     /**
      * Validate pear class
      *
@@ -79,11 +117,11 @@ class ClassChecker extends PropertyChecker {
      * @return string
      */
     public  function getClassName($object){
-        preg_match('/\/[A-Za-z_]*$/', $object['class'], $match);
+        preg_match('/\/[A-Za-z_]*$/', $object[Constants::$CLASS], $match);
         if(count($match) > 0){
-            return str_replace('/', '', $match[0]) ;
+            return str_replace(Constants::$DIR_SEPARATOR, '', $match[0]) ;
         } else {
-            return $object['class'];
+            return $object[Constants::$CLASS];
         }
     }
     /**
@@ -93,10 +131,10 @@ class ClassChecker extends PropertyChecker {
      * @return string
      */
     private function getClassFile($object){
-        if($object['resource']!= 'no'){
-            return $object['resource'];
+        if($object[Constants::$RESOURCE] != 'no'){
+            return $object[Constants::$RESOURCE];
         } else {
-            return $object['class'] . '.php';
+            return $object[Constants::$CLASS] . Constants::$PHP_EXTENSION;
         }
     }
 
@@ -107,7 +145,7 @@ class ClassChecker extends PropertyChecker {
      * @return boolean
      */
     private function isValidPearFile($resource){
-        $includePaths = explode(';', get_include_path());
+        $includePaths = explode(Constants::$CLASS_SEPARATOR, get_include_path());
         return $this->iterateOverIncludePath($includePaths,$resource);
     }
 
@@ -135,8 +173,8 @@ class ClassChecker extends PropertyChecker {
      * @return boolean <b>False</b> if it does not exist or <b>True</b> if it does.
      */
     private function includeFile($includePath, $resource){
-        if(file_exists($includePath. '/' . $resource)){
-            include_once($includePath . '/' . $resource);
+        if(file_exists($includePath . Constants::$DIR_SEPARATOR  . $resource)){
+            include_once($includePath . Constants::$DIR_SEPARATOR . $resource);
             return true;
         }
         return false;

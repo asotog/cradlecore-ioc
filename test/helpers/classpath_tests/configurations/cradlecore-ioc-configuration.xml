@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects context-id="dev-objects-2" classpath="../classes/" cradlecore-version="1.0" container-lifetime="0">
+    <!-- Object 1 -->
+    <object id="connection" class="DBLegacyConnection">
+        <constructor-argument name="host">127.0.0.1</constructor-argument>
+        <constructor-argument name="user">root</constructor-argument>
+        <constructor-argument name="password">1234</constructor-argument>
+        <constructor-argument name="database">dbtest</constructor-argument>
+    </object>
+
+    <!-- Object 4 -->
+    <object id="itemDao" class="InvoiceDao">
+        <constructor-argument name="connection">
+            <ref id="connection" />
+        </constructor-argument>
+    </object>
+    
+</objects>

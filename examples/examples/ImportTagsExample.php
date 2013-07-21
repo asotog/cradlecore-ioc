@@ -1,5 +1,5 @@
 <?php
-include_once('../cradlecore/ioc/context/Context_Factory.php');
+include_once('../../../src/ioc/context/Context_Factory.php');
 $callerDirectory = dirname(__FILE__);
 $configuration = $callerDirectory . '/exampleFiles/configurations/parentConfiguration.xml';
 

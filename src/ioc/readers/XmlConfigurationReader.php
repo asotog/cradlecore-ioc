@@ -7,6 +7,7 @@ include_once(dirname(__FILE__)  . '/XmlObjectTag.php');
 include_once(dirname(__FILE__)  . '/XmlSourceFilesReader.php');
 include_once(dirname(__FILE__)  . '/../includes/IncludeManager.php');
 include_once(dirname(__FILE__)  . '/../../exception/CradleCoreException.php');
+include_once(dirname(__FILE__)  . '/../../utils/Constants.php');
 
 /*
  * This file is part of the cradlecore For PHP package.
@@ -35,15 +36,19 @@ class XmlConfigurationReader extends Factory implements Reader {
     public function  __construct($configurations){
         $this->configurationFiles = $configurations;
         $this->instanceContainer(new Container());
-        $this->retrieveContextId($this->retrieveConfigurationFilename());
-        if(!$this->isContainerCached($this->retrieveCacheLifetime($this->retrieveConfigurationFilename()))){
+        $configurationFilename = $this->retrieveConfigurationFilename();
+        $this->retrieveContextId($configurationFilename);
+        $classPaths = $this->retrieveClassPaths($configurationFilename);
+        $this->setClassPathList($classPaths);
+        if(!$this->isContainerCached($this->retrieveCacheLifetime($configurationFilename))){
             $this->dependencySorter = new DependencySorter();
             $this->read();
             $this->addSortedObjectsToContainer();
             $this->cacheContainer();
         } else {
             $xmlSourceFilesReader = new XmlSourceFilesReader();
-            IncludeManager::includeFiles( $xmlSourceFilesReader->getObjectsDefinitionArray($configurations));
+            $globalConfiguration = array(Constants::$CLASSPATH_LIST => $classPaths);
+            IncludeManager::includeFiles($xmlSourceFilesReader->getObjectsDefinitionArray($configurations), $globalConfiguration);
         }
     }
     
@@ -150,9 +155,9 @@ class XmlConfigurationReader extends Factory implements Reader {
         if ($xml != null) {
             foreach ($xml->children() as $node) {
                 switch($node->getName()){
-                    case 'object' : $this->isObject($node);
+                    case Constants::$OBJECT : $this->isObject($node);
                     break;
-                    case 'import' : $this->isImport($node);
+                    case Constants::$IMPORT : $this->isImport($node);
                     break;
                 }
             }
@@ -168,13 +173,27 @@ class XmlConfigurationReader extends Factory implements Reader {
     private function retrieveCacheLifetime($filename){
         $xml = $this->getXml($filename);
         if ($xml != null) {
-            $lifetime = (string) $xml['container-lifetime'];
+            $lifetime = (string) $xml[Constants::$LIFETIME];
             if(is_numeric($lifetime)) {
                 return $lifetime;
             } else {
                 return 0;
             }
         }
+    }
+    
+    /**
+     * Retrieve defined classpaths from xml document
+     * 
+     * @return array<String>:
+     */
+    private function retrieveClassPaths($filename) {
+        $xml = $this->getXml($filename);
+        if ($xml != null) {
+            $classpaths = (string) $xml[Constants::$CLASSPATH_LIST];
+            return explode(Constants::$CLASS_SEPARATOR, $classpaths);
+        }
+        return array();
     }
     
     /**
@@ -187,7 +206,7 @@ class XmlConfigurationReader extends Factory implements Reader {
     private function retrieveContextId($filename){
         $xml = $this->getXml($filename);
         if ($xml != null) {
-            $contextId = (string) $xml['context-id'];
+            $contextId = (string) $xml[Constants::$CONTEXT_ID];
             if (isset($contextId)) {
                 $this->setCacheIdentifier($contextId);
             } else {
@@ -232,10 +251,10 @@ class XmlConfigurationReader extends Factory implements Reader {
     private function objectChildren($node, &$xmlObject){
         foreach ($node->children() as $child) {
             switch($child->getName()){
-                case 'constructor-argument' :
+                case  Constants::$ARGUMENT:
                     $xmlObject->addConstructorArgument($child);
                     break;
-                case 'property' :
+                case  Constants::$PROPERTY:
                     $xmlObject->addProperty($child);
             }
         }

@@ -3,6 +3,7 @@ include_once(dirname(__FILE__)  . '/Context.php');
 include_once(dirname(__FILE__)  . '/../readers/XmlConfigurationReader.php');
 include_once(dirname(__FILE__)  . '/../../exception/CradleCoreException.php');
 include_once(dirname(__FILE__)  . '/../../logger/Logger.php');
+include_once(dirname(__FILE__)  . '/../../utils/Constants.php');
 
 /*
  * This file is part of the cradlecore For PHP package.
@@ -58,13 +59,8 @@ class XmlContext implements Context {
      * @return string
      */
     private function getCallerDirectory($configuration){
-        $matchesarray = array();
-        preg_match('/\/*[A-Za-z0-9]+.xml/', $configuration, $matchesarray);
-        if(count($matchesarray) > 0){
-            $path = str_replace($matchesarray[0], '/', $configuration);
-            return $path;
-        }
-        return $path;
+        $path = pathinfo($configuration);
+        return $path['dirname'] . Constants::$DIR_SEPARATOR;
     }
 
     /**

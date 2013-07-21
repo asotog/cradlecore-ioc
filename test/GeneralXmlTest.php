@@ -21,7 +21,7 @@ class GeneralXmlTest extends PHPUnit_Framework_TestCase  {
     protected $context;
     protected $context2;
     protected $context3;
-
+    protected $context4;
     /**
      * Set Up the context for each test
      *
@@ -34,9 +34,11 @@ class GeneralXmlTest extends PHPUnit_Framework_TestCase  {
         $configuration = $callerDirectory . '/helpers/configuration.xml';
         $configuration2 = $callerDirectory . '/helpers/oneObjectConfiguration.xml';
         $configuration3 = $callerDirectory . '/helpers/configuration2.xml';
+        $configuration4 = $callerDirectory . '/helpers/classpath_tests/configurations/cradlecore-ioc-configuration.xml';
         $this->context = Context_Factory::getXmlContext($configuration, true);
         $this->context2 = Context_Factory::getXmlContext($configuration2, true);
         $this->context3 = Context_Factory::getXmlContext($configuration3, true);
+        $this->context4 = Context_Factory::getXmlContext($configuration4, true);
     }
 
     /**
@@ -100,12 +102,21 @@ class GeneralXmlTest extends PHPUnit_Framework_TestCase  {
     }
     
     /**
-     * 
+     * Resource attribute test on objects when class name does not match with file name
      * 
      */
     function testResourceAttributteOnObject() {
         $validator = $this->context3->getObject('validator');
         $this->assertNotNull($validator->isEmpty('hello'));
+    }
+    
+    /**
+     * Classpath definition test when is required to specify where the classes are
+     * located to do the look up of those classes instantiations 
+     */
+    function testClassPathAttributte() {
+        $itemDao = $this->context4->getObject('itemDao');
+        $this->assertNotNull($itemDao);
     }
 }
 
