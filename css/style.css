@@ -36,6 +36,9 @@ a:hover {
 .summary {
     color:#000000;
 }
+.summary .l-box {
+    padding: 1.6em;
+}
 .splash-text {
     width: 80%;
     margin: 0 auto;
