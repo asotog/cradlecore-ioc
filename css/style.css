@@ -33,9 +33,6 @@ a:hover {
 .header h1, .hero h1, .hero h2, .tk-omnes-pro {
     font-family:"Maven Pro", sans-serif
 }
-.l-box {
-    padding: 1.3em;
-}
 .summary {
     color:#000000;
 }
@@ -71,10 +68,10 @@ section.docs {
 .legal {
     background: #DDDDDD;
     font-size: 80%;
+    padding:1.3em;
 }
 .legal .git {
     text-align:right;
-    padding: 1em 0 0 0;
 }
 .footer {
     background: #111;
@@ -92,4 +89,10 @@ section.docs {
 }
 .dyna-menu-widget .menu-link {
     display:none;
+}
+.section-nav {
+    padding: 1em 0 0 0;
+}
+.clear {
+    clear:both;
 }
