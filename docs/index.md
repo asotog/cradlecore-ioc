@@ -19,7 +19,7 @@ Here is where dependency injection comes to solve many of this issues when code 
 Is a php library that aims help the developers to implement dependency injection on PHP. The library provides to mechanisms for dependency injection:
 <ul>
     <li>By class constructor</li>
-    <li>By setter/getter class method's approach</li>
+    <li>By setter/getter class method's approach or <a href="{{ site.baseurl }}/docs/properties_injection">properties injection</a></li>
 </ul>
 
 Implementation of each mechanism of injection will depend on the existent classes, but both of them can be easily configured through the xml configurations that this library uses to build the container of objects.
